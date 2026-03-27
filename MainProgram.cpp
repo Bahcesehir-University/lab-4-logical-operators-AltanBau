@@ -29,7 +29,8 @@ using namespace std;
 
 void section1_warmup() {
     cout << "=== SECTION 1: WARM-UP ===" << endl;
-
+    
+    
     // -----------------------------------------------------------------------
     // Exercise 1.1
     // Declare two integer variables, ask the user to enter values for both,
@@ -41,6 +42,18 @@ void section1_warmup() {
     // TODO: Prompt the user and read both values with cin
 
     // TODO: Print "Sum = " followed by the result
+  
+    int num1, num2;
+    int sum;
+    
+    cout << "Enter first number: ";
+    cin >> num1;
+    cout << "Enter second number: ";
+    cin >> num2;
+    
+    sum = num1 + num2;
+    
+    cout << "Sum of the numbers is: " << sum << endl;
 
     cout << endl;
 
@@ -56,6 +69,13 @@ void section1_warmup() {
     // TODO: Prompt and read the value
 
     // TODO: Calculate Fahrenheit and print it
+    
+    double fahrenheit, celsius;
+    cout << "Enter temp in celsius: ";
+    cin >> celsius;
+    fahrenheit = celsius * (9/5) + 32;
+    cout << "Temp in fahrenheit: " << fahrenheit;
+    
 
     cout << endl;
 }
@@ -120,6 +140,17 @@ void section2_coreConcepts() {
     // TODO: Prompt and read it
 
     // TODO: Use if / else if / else to print the correct message
+    
+    int num;
+    cout << "Enter a number: " << endl;
+    
+    if(num > 0){
+        cout << "Number is positive" << endl;
+    }else if(num < 0){
+         cout << "Number is negative" << endl;
+    }else{
+         cout << "Number is zero" << endl;
+    }
 
     cout << endl;
 
@@ -135,7 +166,21 @@ void section2_coreConcepts() {
     // TODO: Declare two ints, prompt, and read them
 
     // TODO: Write the if / else if / else chain
-
+    
+    int firstNum, secondNum;
+    cout << "Enter first number: " << endl;
+    cin >> firstNum;
+    cout << "Enter second number: " << endl;
+    cin >> secondNum;
+    
+    if (firstNum == secondNum){
+        cout << "Equal" << endl;
+    }else if(firstNum > secondNum){
+        cout << "First is bigger" << endl;
+    }else{
+        cout << "Second is bigger" << endl;
+    }
+    
     cout << endl;
 }
 
@@ -155,6 +200,17 @@ void section3_guidedExercises() {
     // -----------------------------------------------------------------------
 
     // TODO: Implement the even/odd checker
+    
+    int number;
+    
+    cout << "Enter an integer: ";
+    cin >> number;
+    
+    if(number % 2 == 0){
+        cout << "Number is even" << endl;
+    }else{
+        cout << "Number is odd" << endl;
+    }
 
     cout << endl;
 
@@ -172,6 +228,30 @@ void section3_guidedExercises() {
     // -----------------------------------------------------------------------
 
     // TODO: Implement the grade calculator
+    
+    int grade;
+    
+    cout << "Enter a grade: ";
+    cin >> grade;
+    
+    if (grade < 0 || grade > 100){
+        cout << "Invalid score";
+    }else if(grade >= 90) {
+        cout << "Grade: A" << endl;
+    }
+    else if(grade >= 80){
+        cout << "Grade: B" << endl;
+    }
+    else if(grade >= 70){
+        cout << "Grade: C" << endl;
+    }
+    else if(grade >= 60) {
+        cout << "Grade: D" << endl;
+    }else{
+        cout << "Grade: F" << endl;
+    }
+    
+    
 
     cout << endl;
 
@@ -187,6 +267,17 @@ void section3_guidedExercises() {
     // -----------------------------------------------------------------------
 
     // TODO: Implement the leap year checker
+    int year;
+    
+    cout << "Enter the year:";
+    cin >> year;
+    
+    if((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+        cout << "Is a leap year" << endl;
+    }
+        cout << "Is not a leap year" << endl;
+    }
+    
 
     cout << endl;
 
@@ -207,7 +298,33 @@ void section3_guidedExercises() {
     // -----------------------------------------------------------------------
 
     // TODO: Implement the triangle validator and classifier
-
+    
+    double side1, side2, side3;
+    int sum1, sum2, sum3;
+    
+    cout << "Enter lenghts 1: ";
+    cin >> side1;
+    cout << "Enter lenghts 2: ";
+    cin >> side2;
+    cout << "Enter lenghts 3: ";
+    cin >> side3;
+    
+    sum1 = side2 + side3;
+    sum2 = side1 + side3;
+    sum3 = side1 + side2;
+    
+    if(sum3 > side3 && sum2 > side2 && sum2 > side1){
+        if(side1 == side2 && side2 == side3){
+            cout << "Equilateral triangle" << endl;
+        }
+        else if(side1 == side2 || side1 == side3 || side2 == side3){
+          cout << "Isosceles triangle" << endl;
+        }
+        else{
+        cout << "Scalene triangle" << endl;
+        }
+    }
+    
     cout << endl;
 
     // -----------------------------------------------------------------------
@@ -228,6 +345,36 @@ void section3_guidedExercises() {
     // -----------------------------------------------------------------------
 
     // TODO: Implement the ticket price calculator
+    
+    int age;
+    char day;
+    
+    cout << "Enter your age:";
+    cin >> age;
+    cout << "Enter W for weekday E for weekend:";
+    cin >> day;
+    
+    if(day == 'W'){
+        if(age < 12){
+            cout << "Ticket price is $3" << endl;
+        }else if(age > 12 && age <= 24){
+            cout << "Ticket price is $6" << endl;
+        }else if(age >= 25 && age <= 64){
+            cout << "Ticket price is $10" << endl;
+        }else{
+            cout << "Ticket price is $5" << endl;
+        }
+    }else{
+        if(age < 12){
+            cout << "Ticket price is $5" << endl;
+        }else if(age > 12 && age <= 24){
+            cout << "Ticket price is $8" << endl;
+        }else if(age >= 25 && age <= 64){
+            cout << "Ticket price is $12" << endl;
+        }else{
+            cout << "Ticket price is $7" << endl;
+        }
+    }
 
     cout << endl;
 }
@@ -255,7 +402,23 @@ void section4_challenge() {
     // -----------------------------------------------------------------------
 
     // TODO: Implement the mini login system
-
+    
+    string username;
+    int pin;
+    
+    cout << "Enter username: ";
+    cin >> username;
+    cout << "Enter pin: ";
+    cin >> pin;
+    
+    if(username == 'admin' && pin == 1234){
+        cout << "Login successful" << endl;
+    }else if(username != 'admin' && pin == 1234){
+        cout << "Unknown user" << endl;
+    }else if (username == 'admin' && pin == 1234){
+        cout << "Incorrect pin" << endl;
+    }
+    
     cout << endl;
 
     // -----------------------------------------------------------------------
@@ -275,6 +438,34 @@ void section4_challenge() {
     // -----------------------------------------------------------------------
 
     // TODO: Implement the BMI advisor
+    
+    float weight, height, BMI;
+    
+    cout << "Enter weight in kg: ";
+    cin >> weight;
+    cout << "Enter height in m: ";
+    cin >> height;
+    
+    if(weight <= 0 || height <= 0){
+        cout << "Invalid numbers" << endl;
+        cout << "Enter weight in kg: ";
+        cin >> weight;
+        cout << "Enter height in m: ";
+        cin >> height;
+    }
+    
+    BMI == weight / (height * height);
+    
+    if(BMI < 18.5){
+        cout << "Underwight" << endl;
+    }else if(BMI >= 18.5 && BMI < 25){
+        cout << "Normal weight" << endl;
+    }else if(BMI >= 25 && BMI < 30){
+        cout << "overweight" << endl;
+    }else{
+        cout << "Obese" << endl;
+    }
+    
 
     cout << endl;
 }
